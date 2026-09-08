@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1120" viewBox="0 0 800 1120">
+  <defs>
+    <radialGradient id="amber-ambient" cx="50%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#F7931A" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#0a0a0c" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="card-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#18181b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#09090b" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Wallpaper -->
+  <rect width="800" height="1120" fill="#000000"/>
+  <rect width="800" height="1120" fill="url(#amber-ambient)"/>
+
+  <!-- Status Bar -->
+  <g fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+    <text x="64" y="58" font-size="22" font-weight="600">9:41</text>
+    <!-- Cellular, Wifi, Battery -->
+    <g transform="translate(670, 42)">
+      <rect x="0" y="10" width="4" height="8" rx="1" fill="#fff"/>
+      <rect x="7" y="6" width="4" height="12" rx="1" fill="#fff"/>
+      <rect x="14" y="2" width="4" height="16" rx="1" fill="#fff"/>
+      <rect x="21" y="-2" width="4" height="20" rx="1" fill="#fff"/>
+      <rect x="36" y="0" width="28" height="15" rx="4" fill="none" stroke="#fff" stroke-width="2"/>
+      <rect x="39" y="3" width="18" height="9" rx="2" fill="#fff"/>
+      <path d="M65 5h2v5h-2z" fill="#fff"/>
+    </g>
+  </g>
+
+  <!-- Lock Screen Clock -->
+  <g text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+    <text x="400" y="160" font-size="24" font-weight="500" fill="#a1a1aa" letter-spacing="1">Wednesday, September 14</text>
+    <text x="400" y="285" font-size="112" font-weight="700" fill="#ffffff" letter-spacing="-3">9:41</text>
+  </g>
+
+  <!-- Stable Channels Live Activity Widget -->
+  <g transform="translate(80, 340)">
+    <!-- Card Frame -->
+    <rect width="640" height="360" rx="36" fill="url(#card-grad)" stroke="#27272a" stroke-width="1.5"/>
+    
+    <!-- Top Pill: Logo + Brand + Status -->
+    <g transform="translate(32, 36)">
+      <!-- Bitcoin / Lightning Logo Circle -->
+      <circle cx="24" cy="24" r="24" fill="#F7931A"/>
+      <path d="M22 13v9h-5l10 13v-9h5z" fill="#000000"/>
+      
+      <text x="60" y="24" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#ffffff">Stable Channels</text>
+      <text x="60" y="42" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="14" font-weight="500" fill="#a1a1aa">Bitcoin Lightning Peg</text>
+
+      <!-- Active Status Dot -->
+      <g transform="translate(500, 14)">
+        <circle cx="0" cy="0" r="5" fill="#22c55e"/>
+        <text x="12" y="5" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#22c55e">LIVE</text>
+      </g>
+    </g>
+
+    <!-- Main Balance Display -->
+    <g transform="translate(32, 130)">
+      <text x="0" y="16" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="16" font-weight="500" fill="#71717a">STABLE USD BALANCE</text>
+      <text x="0" y="72" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="56" font-weight="700" fill="#ffffff" letter-spacing="-1">,000.00</text>
+      <text x="320" y="70" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="22" font-weight="500" fill="#F7931A">USD</text>
+    </g>
+
+    <!-- Divider Line -->
+    <line x1="32" y1="240" x2="608" y2="240" stroke="#27272a" stroke-width="1"/>
+
+    <!-- Metrics Row -->
+    <g transform="translate(32, 275)" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+      <text x="0" y="14" font-size="14" fill="#71717a">Channel Satoshis</text>
+      <text x="0" y="42" font-size="20" font-weight="600" fill="#e4e4e7">10,370,000 sats</text>
+
+      <text x="300" y="14" font-size="14" fill="#71717a">Current BTC Price</text>
+      <text x="300" y="42" font-size="20" font-weight="600" fill="#e4e4e7">,420.00</text>
+
+      <text x="490" y="14" font-size="14" fill="#71717a">Settle Status</text>
+      <text x="490" y="42" font-size="20" font-weight="600" fill="#22c55e">Balanced</text>
+    </g>
+  </g>
+
+  <!-- Secondary Widget: Continuous Rebalance Counter -->
+  <g transform="translate(80, 730)">
+    <rect width="640" height="120" rx="28" fill="#121214" stroke="#27272a" stroke-width="1"/>
+    <g transform="translate(28, 40)">
+      <circle cx="20" cy="20" r="20" fill="#27272a"/>
+      <!-- Refresh / Sync Icon -->
+      <path d="M20 12a8 8 0 1 0 7.5 5.5h-2.1A6 6 0 1 1 20 14v3l5-4-5-4v3z" fill="#F7931A"/>
+      <text x="56" y="18" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="18" font-weight="600" fill="#ffffff">Auto-Rebalanced 2m ago</text>
+      <text x="56" y="38" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="14" fill="#71717a">Continuous micro-settlement via Lightning</text>
+      <text x="490" y="28" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#F7931A">+4,200 sats</text>
+    </g>
+  </g>
+
+  <!-- Bottom Flashlight & Camera Icons -->
+  <g fill="#ffffff" opacity="0.7">
+    <circle cx="120" cy="1020" r="32" fill="#1c1c1e"/>
+    <path d="M112 1010h16v4l-4 6v12h-8v-12l-4-6z" fill="#fff"/>
+    <circle cx="680" cy="1020" r="32" fill="#1c1c1e"/>
+    <path d="M670 1012h20l3 4h7v16h-34v-16h7l3-4zm10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" fill="#fff"/>
+  </g>
+
+  <!-- Home Indicator -->
+  <rect x="310" y="1096" width="180" height="5" rx="2.5" fill="#ffffff" opacity="0.4"/>
+</svg>
