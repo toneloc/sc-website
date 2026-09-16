@@ -3,10 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'motion/react';
-import {
-  GooglePlayButton,
-  AppStoreButton,
-} from '@/components/ui/app-store-buttons';
+import { GooglePlayButton } from '@/components/ui/app-store-buttons';
 import { siteConfig } from '@/data/siteConfig';
 import { Iphone17Pro } from '@/components/ui/iphone-17-pro';
 import { BalanceScaleHero } from '@/components/ui/BalanceScaleHero';
@@ -92,13 +89,6 @@ export const HeroSection: React.FC = () => {
               rel="noopener noreferrer"
               size="md"
               className="hover:scale-105 transition-transform shadow-xs"
-            />
-            <AppStoreButton
-              href={siteConfig.releasesUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              size="md"
-              className="hover:scale-105 transition-transform opacity-90 hover:opacity-100 shadow-xs"
             />
           </motion.div>
         </div>
