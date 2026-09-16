@@ -10,6 +10,22 @@ import { BalanceScaleHero } from '@/components/ui/BalanceScaleHero';
 // Smooth cubic-bezier timing curve (easeInOutCubic)
 const EASE_CUBIC = [0.645, 0.045, 0.355, 1] as const;
 
+interface HeroDeviceItem {
+  readonly title: string;
+  readonly src: string;
+}
+
+const HERO_DEVICES: readonly HeroDeviceItem[] = [
+  { title: 'Receive Stable USD', src: '/images/hero/receive-view.jpg' },
+  { title: 'Payment History', src: '/images/hero/payments-view.jpg' },
+  { title: 'Self-Custodial Dashboard', src: '/images/hero/home-view.jpg' },
+  { title: 'Instant BTC/USD Conversion', src: '/images/hero/btc-to-usd.jpg' },
+  {
+    title: 'Continuous Settlement Details',
+    src: '/images/hero/payment-details-view.jpg',
+  },
+];
+
 export const HeroSection: React.FC = () => {
   const { scrollY } = useScroll({ offset: ['start start', 'end start'] });
   const t = useTransform(scrollY, [0, 300], [100, 0]);
@@ -92,8 +108,41 @@ export const HeroSection: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* 5-Device Showcase with Fan-Out Animation & Scroll Parallax using Iphone17Pro */}
-        <div className="flex flex-nowrap items-center justify-center gap-4 sm:gap-8 h-auto select-none overflow-visible pb-16 sm:pb-24">
+        {/* Mobile: Apple-style Touch Carousel with Snap Scrolling and Indicator Dots */}
+        <div className="block sm:hidden pb-16">
+          <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none px-6 gap-6 items-center">
+            {HERO_DEVICES.map((device, idx) => (
+              <div
+                key={device.src}
+                className="snap-center shrink-0 w-[72vw] max-w-[280px] flex flex-col items-center"
+              >
+                <div className="w-full h-auto drop-shadow-2xl">
+                  <Iphone17Pro
+                    src={device.src}
+                    width="100%"
+                    height="100%"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="mt-4 text-center">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#F7931A]">
+                    Step {idx + 1}
+                  </span>
+                  <p className="text-sm font-bold text-zinc-900 dark:text-white mt-0.5">
+                    {device.title}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Subtle Swipe Guidance Hint */}
+          <p className="text-xs text-zinc-400 dark:text-zinc-600 mt-4 tracking-wide">
+            Swipe to explore app features
+          </p>
+        </div>
+
+        {/* Desktop / Tablet: 5-Device Showcase with Fan-Out Animation & Scroll Parallax */}
+        <div className="hidden sm:flex flex-nowrap items-center justify-center gap-4 sm:gap-8 h-auto select-none overflow-visible pb-16 sm:pb-24">
           {/* Device 1 - Far Left (Receive Screen) */}
           <motion.div
             initial={{ opacity: 0, x: -200 }}
