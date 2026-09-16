@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120">
+  <defs>
+    <clipPath id="panel-left">
+      <rect x="105" y="116" width="572" height="892" rx="42"/>
+    </clipPath>
+    <linearGradient id="left-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111114"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </linearGradient>
+    <linearGradient id="amber-card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f1c18"/>
+      <stop offset="100%" stop-color="#141312"/>
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#panel-left)">
+    <rect x="105" y="116" width="572" height="892" rx="42" fill="url(#left-bg)"/>
+    <rect x="105" y="116" width="572" height="892" rx="42" fill="none" stroke="#27272a" stroke-width="2"/>
+
+    <!-- Header -->
+    <g transform="translate(145, 170)" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+      <text x="0" y="0" font-size="13" font-weight="700" fill="#F7931A" letter-spacing="2">STABLE POSITION</text>
+      <text x="0" y="32" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="-0.5">USD Purchasing Power</text>
+      <text x="0" y="58" font-size="15" fill="#a1a1aa">Protected against Bitcoin volatility.</text>
+    </g>
+
+    <!-- Balance Hero Card -->
+    <g transform="translate(145, 270)">
+      <rect width="492" height="240" rx="28" fill="url(#amber-card)" stroke="#F7931A" stroke-opacity="0.3" stroke-width="1.5"/>
+      <g transform="translate(32, 40)" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+        <text x="0" y="0" font-size="14" font-weight="600" fill="#a1a1aa">CURRENT VALUE</text>
+        <text x="0" y="52" font-size="50" font-weight="700" fill="#ffffff" letter-spacing="-1.5">,000.00</text>
+        <text x="290" y="50" font-size="20" font-weight="600" fill="#F7931A">USD</text>
+
+        <!-- Dynamic Peg Status -->
+        <g transform="translate(0, 95)">
+          <rect width="428" height="52" rx="16" fill="#000000" stroke="#27272a" stroke-width="1"/>
+          <circle cx="24" cy="26" r="6" fill="#22c55e"/>
+          <text x="42" y="31" font-size="14" font-weight="500" fill="#e4e4e7">100% Native Bitcoin • 10,370,000 sats</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Key Metrics Grid -->
+    <g transform="translate(145, 545)" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+      <!-- Metric 1 -->
+      <rect x="0" y="0" width="236" height="120" rx="20" fill="#121214" stroke="#27272a" stroke-width="1"/>
+      <text x="20" y="36" font-size="13" fill="#71717a">PEG ORACLE</text>
+      <text x="20" y="68" font-size="22" font-weight="700" fill="#ffffff">,420</text>
+      <text x="20" y="92" font-size="13" fill="#22c55e">Live Reference</text>
+
+      <!-- Metric 2 -->
+      <rect x="256" y="0" width="236" height="120" rx="20" fill="#121214" stroke="#27272a" stroke-width="1"/>
+      <text x="276" y="36" font-size="13" fill="#71717a">LIGHTNING CHANNEL</text>
+      <text x="276" y="68" font-size="22" font-weight="700" fill="#ffffff">0.25 BTC</text>
+      <text x="276" y="92" font-size="13" fill="#F7931A">Total Capacity</text>
+    </g>
+
+    <!-- Action Buttons -->
+    <g transform="translate(145, 700)" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+      <rect x="0" y="0" width="236" height="56" rx="28" fill="#F7931A"/>
+      <text x="118" y="34" text-anchor="middle" font-size="16" font-weight="700" fill="#000000">Receive USD</text>
+
+      <rect x="256" y="0" width="236" height="56" rx="28" fill="#1c1c1e" stroke="#3f3f46" stroke-width="1"/>
+      <text x="374" y="34" text-anchor="middle" font-size="16" font-weight="600" fill="#ffffff">Send SATS</text>
+    </g>
+
+    <!-- Channel Health Badge -->
+    <g transform="translate(145, 800)" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+      <rect width="492" height="70" rx="20" fill="#121214" stroke="#27272a" stroke-width="1"/>
+      <text x="24" y="32" font-size="14" font-weight="600" fill="#ffffff">Continuous Rebalance Active</text>
+      <text x="24" y="52" font-size="12" fill="#71717a">Rebalances automatically when price drifts > 0.1%</text>
+      <text x="420" y="42" font-size="14" font-weight="700" fill="#22c55e">Healthy</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120">
+  <defs>
+    <clipPath id="panel-right">
+      <rect x="923" y="116" width="572" height="892" rx="42"/>
+    </clipPath>
+    <linearGradient id="right-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111114"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </linearGradient>
+    <linearGradient id="card-dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#0f0f11"/>
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#panel-right)">
+    <rect x="923" y="116" width="572" height="892" rx="42" fill="url(#right-bg)"/>
+    <rect x="923" y="116" width="572" height="892" rx="42" fill="none" stroke="#27272a" stroke-width="2"/>
+
+    <!-- Header -->
+    <g transform="translate(963, 170)" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+      <text x="0" y="0" font-size="13" font-weight="700" fill="#22c55e" letter-spacing="2">COUNTERPARTY SIDE</text>
+      <text x="0" y="32" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="-0.5">Leveraged BTC Exposure</text>
+      <text x="0" y="58" font-size="15" fill="#a1a1aa">Acquiring surplus Bitcoin upside.</text>
+    </g>
+
+    <!-- Exposure Card -->
+    <g transform="translate(963, 270)">
+      <rect width="492" height="240" rx="28" fill="url(#card-dark)" stroke="#27272a" stroke-width="1.5"/>
+      <g transform="translate(32, 40)" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+        <text x="0" y="0" font-size="14" font-weight="600" fill="#a1a1aa">COUNTERPARTY COLLATERAL</text>
+        <text x="0" y="52" font-size="50" font-weight="700" fill="#ffffff" letter-spacing="-1.5">0.1462 BTC</text>
+        <text x="320" y="48" font-size="18" font-weight="600" fill="#22c55e">+1.85x</text>
+
+        <!-- Position bar -->
+        <g transform="translate(0, 95)">
+          <rect width="428" height="12" rx="6" fill="#27272a"/>
+          <rect width="280" height="12" rx="6" fill="#F7931A"/>
+          <text x="0" y="36" font-size="13" fill="#a1a1aa">Pegged USD: ,000</text>
+          <text x="280" y="36" font-size="13" font-weight="600" fill="#F7931A">BTC Upside: ,096</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Real-time Settlement Log -->
+    <g transform="translate(963, 545)" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+      <rect width="492" height="210" rx="24" fill="#121214" stroke="#27272a" stroke-width="1"/>
+      <text x="28" y="36" font-size="14" font-weight="700" fill="#ffffff" letter-spacing="1">RECENT SETTLEMENTS</text>
+
+      <g transform="translate(28, 60)" font-size="13">
+        <text x="0" y="16" fill="#a1a1aa">14:32:04 • BTC ,420</text>
+        <text x="436" y="16" text-anchor="end" font-weight="600" fill="#22c55e">+4,210 sats</text>
+        <line x1="0" y1="30" x2="436" y2="30" stroke="#27272a" stroke-width="1"/>
+
+        <text x="0" y="56" fill="#a1a1aa">14:27:11 • BTC ,180</text>
+        <text x="436" y="56" text-anchor="end" font-weight="600" fill="#ef4444">-1,150 sats</text>
+        <line x1="0" y1="70" x2="436" y2="70" stroke="#27272a" stroke-width="1"/>
+
+        <text x="0" y="96" fill="#a1a1aa">14:22:00 • BTC ,310</text>
+        <text x="436" y="96" text-anchor="end" font-weight="600" fill="#22c55e">+2,840 sats</text>
+      </g>
+    </g>
+
+    <!-- Close Anytime Button -->
+    <g transform="translate(963, 785)" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+      <rect width="492" height="60" rx="30" fill="#1c1c1e" stroke="#3f3f46" stroke-width="1"/>
+      <text x="246" y="36" text-anchor="middle" font-size="15" font-weight="600" fill="#e4e4e7">At-Will: Settle &amp; Close Channel Anytime</text>
+    </g>
+  </g>
+</svg>

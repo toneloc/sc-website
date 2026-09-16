@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+dist
+build
+.git
+bun.lock
+public/models
+public/images
+public/wallpapers
+website
