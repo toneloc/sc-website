@@ -10,12 +10,10 @@ import {
   Code,
   Send,
   MessageCircle,
-  Sparkles,
 } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Footer } from '@/components/layout/Footer';
 import { resourcesData } from '@/data/resources';
-import { siteConfig } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Links & Resources - Stable Channels',

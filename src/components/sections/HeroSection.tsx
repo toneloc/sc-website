@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { GooglePlayButton } from '@/components/ui/app-store-buttons';
 import { siteConfig } from '@/data/siteConfig';

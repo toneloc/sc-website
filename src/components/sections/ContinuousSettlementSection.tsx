@@ -6,49 +6,6 @@ import { motion } from 'motion/react';
 import { Container } from '@/components/ui/Container';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 
-interface BloomwellStep {
-  readonly id: string;
-  readonly number: string;
-  readonly title: string;
-  readonly description: string;
-  readonly imageSrc: string;
-  readonly imageAlt: string;
-  readonly align: 'left' | 'right';
-}
-
-const STEPS: readonly BloomwellStep[] = [
-  {
-    id: 'step-1',
-    number: '1',
-    title: 'Continuous Settlement',
-    description:
-      'Balances rebalance automatically every few minutes. No manual action required. Peer-to-peer satoshi micro-adjustments keep your dollar value steady as Bitcoin price fluctuates.',
-    imageSrc: '/images/how-it-works/step-1.jpg',
-    imageAlt: 'Continuous settlement satoshi balance scale illustration',
-    align: 'left',
-  },
-  {
-    id: 'step-2',
-    number: '2',
-    title: 'Close Anytime',
-    description:
-      'All agreements are at-will. Either party can end the agreement and withdraw funds at any time. Continuous settlement keeps counterparty duration minimal.',
-    imageSrc: '/images/how-it-works/step-2.jpg',
-    imageAlt: 'Instant channel close and on-chain withdrawal illustration',
-    align: 'right',
-  },
-  {
-    id: 'step-3',
-    number: '3',
-    title: 'Built for Privacy and Resilience',
-    description:
-      'Stable Channels is a Bitcoin-native, self-custodial solution. No tokens, no banks, no third-party risk. Your money remains pure Bitcoin in a wallet you control.',
-    imageSrc: '/images/how-it-works/step-3.jpg',
-    imageAlt: 'Self-custodial Bitcoin shield and fortress privacy illustration',
-    align: 'left',
-  },
-];
-
 // Concentric decorative sunburst lines behind number badge
 const ConcentricRays: React.FC = () => (
   <svg

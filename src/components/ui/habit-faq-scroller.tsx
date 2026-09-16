@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
-import { X, ExternalLink, HelpCircle } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
 
 export interface FaqItemData {
   id: string;
