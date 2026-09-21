@@ -22,8 +22,8 @@ export function FooterCTA() {
           <span className="text-[#F7931A]">dollar stability</span> on Bitcoin?
         </h3>
         <p className="text-base pt-4 text-zinc-600 dark:text-[#86868b] text-left leading-relaxed">
-          Get instant USD stability in a self-custodial wallet. No banks, no
-          synthetic tokens - transparent, continuous settlement over Lightning.
+          Keep part of your balance targeting a steady dollar value, in a wallet
+          only you control. Install from Google Play, or build from source.
         </p>
 
         <motion.div
@@ -35,11 +35,11 @@ export function FooterCTA() {
         >
           <Link
             className="w-full sm:w-auto h-12 text-black font-bold inline-flex items-center justify-center rounded-full px-6 text-sm bg-[#F7931A] hover:bg-[#E08213] transition-colors duration-200 group gap-2"
-            href={siteConfig.releasesUrl}
+            href={siteConfig.googlePlayUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span>Download App</span>
+            <span>Get it on Google Play</span>
             <CornerDownLeft className="size-4" />
           </Link>
           <Link

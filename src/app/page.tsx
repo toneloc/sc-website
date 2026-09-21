@@ -7,6 +7,7 @@ import { ContinuousSettlementSection } from '@/components/sections/ContinuousSet
 import { LiveTickerSection } from '@/components/sections/LiveTickerSection';
 import { GetStartedSection } from '@/components/sections/GetStartedSection';
 import { FaqSection } from '@/components/sections/FaqSection';
+import { ProductDemoSection } from '@/components/sections/ProductDemoSection';
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
+        <ProductDemoSection />
         <BentoSection />
         <ContinuousSettlementSection />
         <LiveTickerSection />

@@ -67,11 +67,12 @@ export function BentoGrid() {
                 </div>
                 <div className="relative z-10 mt-6 space-y-2 text-center">
                   <h3 className="text-lg font-medium transition text-zinc-900 dark:text-white">
-                    Lightning Dev Kit (LDK)
+                    Choose your exposure
                   </h3>
                   <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                    Embedded node lifecycle management with background state
-                    synchronization and rapid channel recovery.
+                    Move the slider to set how much of your balance targets a
+                    steady dollar value, and how much stays in bitcoin. Change
+                    it whenever you want.
                   </p>
                 </div>
               </CardContent>
@@ -100,12 +101,12 @@ export function BentoGrid() {
                 </div>
                 <div className="relative z-10 mt-6 space-y-2 text-center">
                   <h3 className="text-lg font-medium transition text-zinc-900 dark:text-white">
-                    Transparent On-Chain
+                    Bitcoin, end to end
                   </h3>
                   <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                    All state channels and settlement adjustments execute on
-                    native Bitcoin Lightning rails with full auditable
-                    transparency.
+                    Adjustments are ordinary Lightning payments between you and
+                    your counterparty, enforceable on Bitcoin. No tokens and no
+                    IOUs are issued.
                   </p>
                 </div>
               </CardContent>
@@ -135,11 +136,12 @@ export function BentoGrid() {
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-lg font-medium transition text-zinc-900 dark:text-white">
-                      100% Self-Custodial
+                      Your keys stay yours
                     </h3>
                     <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                      Your keys, your Bitcoin. Funds are held in 2-of-2 multisig
-                      Lightning channels with zero counterparty lockups.
+                      Manage your Bitcoin exposure without handing custody to an
+                      exchange or a stablecoin issuer. Funds sit in a 2-of-2
+                      Lightning channel, and your keys never leave your device.
                     </p>
                   </div>
                 </div>
@@ -158,7 +160,7 @@ export function BentoGrid() {
                       &gt; state: 2-of-2 multisig
                     </div>
                     <div className="text-zinc-500 dark:text-zinc-500">
-                      &gt; counterparty_risk: 0%
+                      &gt; keys: on your device
                     </div>
                   </div>
                 </div>
@@ -192,8 +194,8 @@ export function BentoGrid() {
                       Global Lightning Coverage
                     </h3>
                     <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                      Maintain USD purchasing power anywhere in the world over
-                      the Bitcoin Lightning Network.
+                      Maintain a steady dollar-value target anywhere in the
+                      world over the Bitcoin Lightning Network.
                     </p>
                   </div>
                 </div>

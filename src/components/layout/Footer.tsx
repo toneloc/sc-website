@@ -5,7 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 import { Zap, FileText, Lock, Heart, LucideIcon } from 'lucide-react';
-import { GithubIcon, TwitterIcon } from '@/components/ui/Icons';
+import {
+  GithubIcon,
+  TwitterIcon,
+  TelegramIcon,
+  YoutubeIcon,
+} from '@/components/ui/Icons';
 import { siteConfig } from '@/data/siteConfig';
 import { footerSections } from '@/data/navigation';
 import { FooterCTA } from '@/components/layout/FooterCTA';
@@ -49,8 +54,8 @@ export function Footer() {
                 </span>
               </div>
               <p className="text-sm text-zinc-600 dark:text-[#86868b] mb-5 leading-relaxed">
-                Self-custodial USD stability on Bitcoin Lightning. No banks, no
-                synthetic tokens, and zero custody risk.
+                Self-custodial USD stability on Bitcoin Lightning. No banks and
+                no tokens. Your keys stay yours.
               </p>
               <div className="flex gap-2">
                 <Link
@@ -63,13 +68,31 @@ export function Footer() {
                   <GithubIcon className="h-4 w-4" />
                 </Link>
                 <Link
+                  href={siteConfig.xUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full text-zinc-600 dark:text-[#86868b] hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors inline-flex items-center justify-center"
+                  aria-label="X"
+                >
+                  <TwitterIcon className="h-4 w-4" />
+                </Link>
+                <Link
                   href={siteConfig.telegramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-full text-zinc-600 dark:text-[#86868b] hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors inline-flex items-center justify-center"
                   aria-label="Telegram"
                 >
-                  <TwitterIcon className="h-4 w-4" />
+                  <TelegramIcon className="h-4 w-4" />
+                </Link>
+                <Link
+                  href={siteConfig.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full text-zinc-600 dark:text-[#86868b] hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors inline-flex items-center justify-center"
+                  aria-label="YouTube"
+                >
+                  <YoutubeIcon className="h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -104,12 +127,27 @@ export function Footer() {
             })}
           </motion.div>
 
+          {/* Regulatory positioning — kept in step with the app store listings */}
+          <div className="border-t border-zinc-200 dark:border-white/[0.08] pt-8 pb-8">
+            <p className="text-[11px] leading-relaxed text-zinc-500 dark:text-[#6b6b70] max-w-4xl">
+              Stable Channels is not a cryptocurrency exchange, brokerage,
+              custodian, or money services business. It does not offer the
+              purchase or sale of cryptocurrency, does not operate an order book
+              or matching engine, and provides no fiat on- or off-ramps. Stable
+              Channels is self-custodial, open-source software: your keys and
+              your funds remain on your own device at all times, and neither
+              Stable Channels nor any third party ever takes custody of them.
+              The software enables peers to manage Bitcoin volatility and
+              exposure directly with one another over the Lightning Network.
+            </p>
+          </div>
+
           {/* Bottom Copyright Section */}
           <div className="border-t border-zinc-200 dark:border-white/[0.08] pt-8">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-xs text-zinc-500 dark:text-[#86868b]">
-                (C) {new Date().getFullYear()} {siteConfig.name}. Open source
-                under the GPLv3 License.
+                &copy; {new Date().getFullYear()} {siteConfig.name}. Open
+                source under the GPLv3 License.
               </p>
               <p className="text-xs text-zinc-500 dark:text-[#86868b] flex items-center gap-1.5">
                 Built with{' '}

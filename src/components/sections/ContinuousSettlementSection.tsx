@@ -491,7 +491,7 @@ export const ContinuousSettlementSection: React.FC = () => {
                   </h3>
                   <p className="text-sm sm:text-base text-zinc-600 dark:text-[#86868b] leading-relaxed">
                     Stable Channels is a Bitcoin-native, self-custodial
-                    solution. No tokens, no banks, no third-party risk.
+                    solution. No tokens, no banks, no third-party custody.
                   </p>
                 </div>
 

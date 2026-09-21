@@ -5,7 +5,7 @@ export const getStartedSteps: StepGuideItem[] = [
   {
     stepNumber: 1,
     title: 'Download',
-    description: `Get the Android app on Google Play, or download the desktop app from our releases page. iOS coming soon.`,
+    description: `Android: install straight from Google Play. Desktop: macOS and Linux builds are on the releases page. iPhone: iOS is not released yet.`,
     linkText: 'releases page',
     linkHref: siteConfig.releasesUrl,
   },

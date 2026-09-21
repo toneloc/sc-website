@@ -6,6 +6,9 @@ export interface Iphone17ProProps extends SVGProps<SVGSVGElement> {
   width?: number | string;
   height?: number | string;
   src?: string;
+  /** Plays on the screen instead of a still image. */
+  videoSrc?: string;
+  poster?: string;
   className?: string;
 }
 
@@ -13,6 +16,8 @@ export function Iphone17Pro({
   width = 200,
   height = 400,
   src,
+  videoSrc,
+  poster,
   className = '',
   ...props
 }: Iphone17ProProps) {
@@ -64,6 +69,27 @@ export function Iphone17Pro({
           preserveAspectRatio="xMidYMid slice"
           clipPath={`url(#${clipId})`}
         />
+      )}
+
+      {/* Screen video content */}
+      {videoSrc && (
+        <foreignObject
+          x="14.08"
+          y="12.81"
+          width="171.98"
+          height="374.37"
+          clipPath={`url(#${clipId})`}
+        >
+          <video
+            className="w-full h-full object-cover"
+            controls
+            playsInline
+            preload="none"
+            poster={poster}
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        </foreignObject>
       )}
 
       {/* Dynamic Island pill */}

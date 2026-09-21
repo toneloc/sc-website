@@ -19,7 +19,7 @@ const HERO_DEVICES: readonly HeroDeviceItem[] = [
   { title: 'Receive Stable USD', src: '/images/hero/receive-view.jpg' },
   { title: 'Payment History', src: '/images/hero/payments-view.jpg' },
   { title: 'Self-Custodial Dashboard', src: '/images/hero/home-view.jpg' },
-  { title: 'Instant BTC/USD Conversion', src: '/images/hero/btc-to-usd.jpg' },
+  { title: 'Adjust your Bitcoin exposure.', src: '/images/hero/btc-to-usd.jpg' },
   {
     title: 'Continuous Settlement Details',
     src: '/images/hero/payment-details-view.jpg',
@@ -75,11 +75,9 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5, ease: EASE_CUBIC }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 tracking-tighter text-zinc-900 dark:text-white leading-[1.12]"
           >
-            Get USD stability.
+            Stable money.
             <br />
-            <span className="text-[#F7931A]">
-              Stay in self-custodied Bitcoin.
-            </span>
+            <span className="text-[#F7931A]">Your bitcoin.</span>
           </motion.h1>
 
           <motion.p
@@ -88,8 +86,9 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.7, ease: EASE_CUBIC }}
             className="max-w-2xl mx-auto text-lg sm:text-xl mb-8 font-medium text-balance text-zinc-600 dark:text-zinc-400 leading-relaxed"
           >
-            Stable Channels keeps your dollar balance steady in a wallet you
-            control. No banks, no tokens, no third parties.
+            Choose how much of your balance targets a steady dollar value, and
+            how much stays exposed to Bitcoin&apos;s price. All in a
+            self-custodial Lightning wallet.
           </motion.p>
 
           <motion.div
@@ -105,6 +104,44 @@ export const HeroSection: React.FC = () => {
               size="md"
               className="hover:scale-105 transition-transform shadow-xs"
             />
+            <a
+              href="#demo"
+              className="inline-flex items-center justify-center h-[52px] px-6 rounded-full border border-zinc-300 dark:border-white/[0.15] text-sm font-medium text-zinc-900 dark:text-white hover:border-[#F7931A] hover:text-[#F7931A] transition-colors"
+            >
+              Watch the demo
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.15 }}
+            className="max-w-2xl mx-auto -mt-10 mb-14 space-y-2"
+          >
+            <p className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              No stablecoins. No custodian. Open-source software.
+            </p>
+            <p className="text-xs text-zinc-500 dark:text-zinc-500 leading-relaxed">
+              Dollar stability depends on channel liquidity, connectivity, and
+              continued settlement with your counterparty.{' '}
+              <a
+                href="#how-it-works"
+                className="underline underline-offset-2 hover:text-[#F7931A]"
+              >
+                How stability works, and its limits
+              </a>
+            </p>
+            <p className="text-xs text-zinc-500 dark:text-zinc-500">
+              <a
+                href={siteConfig.releasesUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-[#F7931A]"
+              >
+                Desktop downloads
+              </a>{' '}
+              &middot; iOS coming soon
+            </p>
           </motion.div>
         </div>
 

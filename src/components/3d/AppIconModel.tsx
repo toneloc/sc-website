@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
@@ -15,6 +16,10 @@ export const AppIconModel: React.FC<AppIconModelProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
+  // WebGL is not always available: iOS Lockdown Mode, Tor at its safest setting,
+  // a blocklisted GPU, or enterprise policy all disable it. When that happens the
+  // flat icon stands in, instead of an uncaught throw taking down the page.
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -31,11 +36,19 @@ export const AppIconModel: React.FC<AppIconModelProps> = ({
     camera.position.set(0, 0, 5);
 
     // Renderer
-    const renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true,
-      powerPreference: 'high-performance',
-    });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: true,
+        powerPreference: 'high-performance',
+      });
+    } catch (error) {
+      console.warn('3D app icon unavailable; showing the static icon.', error);
+      setFailed(true);
+      setLoading(false);
+      return;
+    }
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -92,6 +105,7 @@ export const AppIconModel: React.FC<AppIconModelProps> = ({
       undefined,
       (error) => {
         console.error('Error loading 3D model:', error);
+        setFailed(true);
         setLoading(false);
       }
     );
@@ -151,6 +165,22 @@ export const AppIconModel: React.FC<AppIconModelProps> = ({
       scene.clear();
     };
   }, [modelPath]);
+
+  if (failed) {
+    return (
+      <div
+        className={`relative flex items-center justify-center pointer-events-none select-none ${className}`}
+      >
+        <Image
+          src="/images/app-icon.svg"
+          alt="Stable Channels"
+          width={240}
+          height={240}
+          className="w-full h-full object-contain drop-shadow-2xl"
+        />
+      </div>
+    );
+  }
 
   return (
     <div

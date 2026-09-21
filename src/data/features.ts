@@ -39,7 +39,7 @@ export const continuousSettlementFeature = {
     {
       title: 'Built for Privacy and Resilience',
       description:
-        'Stable Channels is a Bitcoin-native, self-custodial solution. No tokens, no banks, no third-party risk.',
+        'Stable Channels is a Bitcoin-native, self-custodial solution. No tokens, no banks, no third-party custody.',
     },
   ],
 };

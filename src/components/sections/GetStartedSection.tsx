@@ -35,19 +35,28 @@ export const GetStartedSection: React.FC = () => {
           </h2>
           <p className="text-base sm:text-lg text-zinc-600 dark:text-[#86868b] leading-relaxed mb-8 max-w-xl mx-auto">
             Simple three-step setup to protect your Bitcoin purchasing power
-            without banks or custody risk.
+            without a bank or custodian.
           </p>
 
           {/* Highlighted Apple-style Get Started Button */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href={siteConfig.releasesUrl}
+              href={siteConfig.googlePlayUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="relative inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-semibold text-black bg-[#F7931A] hover:bg-[#E08213] rounded-full shadow-lg shadow-[#F7931A]/20 hover:shadow-xl hover:shadow-[#F7931A]/30 transition-all duration-200 group active:scale-[0.98]"
             >
-              <span>Get Started</span>
+              <span>Install on Google Play</span>
               <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
+
+            <Link
+              href={siteConfig.releasesUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3.5 text-sm sm:text-base font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white rounded-full transition-colors"
+            >
+              Desktop downloads
             </Link>
 
             <Link

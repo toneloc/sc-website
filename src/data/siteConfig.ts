@@ -13,6 +13,8 @@ export const siteConfig = {
     'https://play.google.com/store/apps/details?id=com.stablechannels.app',
   contactFormUrl:
     'https://docs.google.com/forms/d/e/1FAIpQLSdleHfPvcg3x3exnNdrE_ctAX_oPj69DveHh_R46zu7Y_jx8Q/viewform?usp=sf_link',
-  telegramUrl: 'https://t.co/2HNMQciSM2',
+  telegramUrl: 'https://t.me/+jvZKrdM6XZFjZGMx',
+  xUrl: 'https://x.com/stablechannels/',
+  youtubeUrl: 'https://www.youtube.com/@StableChannels',
   year: 2026,
 };

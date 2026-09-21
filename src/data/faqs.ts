@@ -36,7 +36,7 @@ export const faqsData: FaqItem[] = [
     id: 'faq-6',
     question: 'How often does the system settle?',
     answer:
-      'Every few minutes. The system queries five independent price feeds and uses the median price to ensure accuracy.',
+      'Every few minutes. The app queries several independent exchange price feeds and uses the median, so one bad or stale feed cannot move your balance.',
   },
   {
     id: 'faq-7',
@@ -63,5 +63,45 @@ export const faqsData: FaqItem[] = [
       'You can find more information on the Stable Channels GitHub and join the discussion on the Stable Channels Telegram.',
     linkText: 'Stable Channels GitHub',
     linkHref: siteConfig.githubUrl,
+  },
+];
+
+/** Practical answers a visitor needs before downloading: funding, fees, limits, exit. */
+export const practicalFaqsData: FaqItem[] = [
+  {
+    id: 'faq-funding',
+    question: 'What do I need to fund it?',
+    answer:
+      'Bitcoin, and nothing else. Your first Lightning payment opens a channel and activates the account, up to $100 to start. You can also deposit on-chain and move those funds into the channel afterwards.',
+  },
+  {
+    id: 'faq-cost',
+    question: 'What does it cost?',
+    answer:
+      'Converting between bitcoin and a dollar target costs 1%, shown on the confirmation screen before you accept. Lightning routing fees and on-chain fees when you deposit or withdraw are the usual network costs, and the settlement payments that keep your target are not charged separately.',
+  },
+  {
+    id: 'faq-counterparty',
+    question: 'Who is my counterparty?',
+    answer:
+      'Today it is the Stable Channels node, which takes the opposite Bitcoin exposure and runs the settlements. The protocol is open, so anyone can run the other side.',
+  },
+  {
+    id: 'faq-offline',
+    question: 'What happens if my phone is offline?',
+    answer:
+      'Settlement pauses while your wallet is unreachable and resumes when it comes back, so your dollar target can drift in the meantime. The app only settles against a recent view of the chain, and push notifications wake it in the background.',
+  },
+  {
+    id: 'faq-sharp-move',
+    question: 'What happens in a sharp price move?',
+    answer:
+      'Adjustments keep running every few minutes. If Bitcoin falls far enough, the channel can run out of room to hold the target, and keeping it would need more funds added. Your stabilized balance can only be as large as the channel can cover.',
+  },
+  {
+    id: 'faq-exit',
+    question: 'How do I get out?',
+    answer:
+      'Convert your dollar target back to bitcoin at any time, then spend over Lightning or withdraw on-chain. You can also close the channel from settings, which returns your funds on-chain without anyone else\u2019s cooperation.',
   },
 ];
