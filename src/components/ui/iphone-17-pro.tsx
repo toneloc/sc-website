@@ -6,18 +6,33 @@ export interface Iphone17ProProps extends SVGProps<SVGSVGElement> {
   width?: number | string;
   height?: number | string;
   src?: string;
-  /** Plays on the screen instead of a still image. */
-  videoSrc?: string;
-  poster?: string;
+  /**
+   * Paint for the screen cut-out. Pass "none" to leave it transparent so a
+   * sibling element can show through it — see the note on video, below.
+   */
+  screenFill?: string;
   className?: string;
 }
+
+/*
+ * Do not put a <video> inside this SVG.
+ *
+ * It was rendered in a <foreignObject> until 2026-09-24. It looked right, but
+ * the browser hit-tested it in the wrong place: roughly the left 15% and top
+ * 10% of the painted video did not receive clicks at all, and the native play
+ * button happens to sit in that dead strip. Clicking the play triangle did
+ * nothing while clicking elsewhere on the video worked, which is what users
+ * reported.
+ *
+ * Render the video as an ordinary absolutely-positioned element and stack this
+ * frame over it with pointer-events-none, as ProductDemoSection does.
+ */
 
 export function Iphone17Pro({
   width = 200,
   height = 400,
   src,
-  videoSrc,
-  poster,
+  screenFill = '#000000',
   className = '',
   ...props
 }: Iphone17ProProps) {
@@ -47,7 +62,7 @@ export function Iphone17Pro({
 
       {/* Screen background */}
       <rect
-        fill="#000000"
+        fill={screenFill}
         x="14.08"
         y="12.81"
         width="171.98"
@@ -69,27 +84,6 @@ export function Iphone17Pro({
           preserveAspectRatio="xMidYMid slice"
           clipPath={`url(#${clipId})`}
         />
-      )}
-
-      {/* Screen video content */}
-      {videoSrc && (
-        <foreignObject
-          x="14.08"
-          y="12.81"
-          width="171.98"
-          height="374.37"
-          clipPath={`url(#${clipId})`}
-        >
-          <video
-            className="w-full h-full object-cover"
-            controls
-            playsInline
-            preload="none"
-            poster={poster}
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
-        </foreignObject>
       )}
 
       {/* Dynamic Island pill */}
